@@ -49,6 +49,12 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 //implement Kubernetes deployment here
+                kubernetesDeploy (
+                    kubernetesId: kubeconfig
+                    configs: 
+                    enableConfigSubstitution: true
+                
+                )
             }
         }
     }
